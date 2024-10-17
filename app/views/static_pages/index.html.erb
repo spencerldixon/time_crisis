@@ -1,0 +1,15 @@
+<div class="p-5 bg-blue-200">
+  You can change this text and it will not update the timestamp
+</div>
+
+<div id="main" class="p-5 bg-green-200">
+  <h1 class="font-bold text-4xl">Change me to update the timestamp</h1>
+  <p>But changing this content will result in the hash and timestamp changing</p>
+</div>
+
+
+<div class="bg-red-200 p-5">
+  <p>Path: <%= request.path %></p>
+  <p>Hash: <%= Kredis.string(request.path + ":hash").value %></p>
+  <p>Last change at: <%= Kredis.datetime(request.path + ":created_at").value %></p>
+</div>
